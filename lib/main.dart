@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:gemini_questions/model/model_gemini.dart';
 import 'package:intl/intl.dart';
@@ -16,11 +17,17 @@ class MainApp extends StatefulWidget {
 
 class _MainAppState extends State<MainApp> {
   TextEditingController promptController = TextEditingController();
-  static const key = 'AIzaSyC4RPeIBPNvemxexH6N8zDHPpP4j6dIxx8';
+
+  final key = dotenv.env['GEMINI_API_KEY'].toString();
 
   final List<ModelMessage> prompt = [];
- 
-  final model = GenerativeModel(model: "gemini-2.0-flash", apiKey: key);
+
+  late final GenerativeModel model;
+  @override
+  void initState() {
+    super.initState();
+    model = GenerativeModel(model: "gemini-2.0-flash", apiKey: key);
+  }
 
   Future<void> sendMessage(int count) async {
     final message = promptController.text.trim();
