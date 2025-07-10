@@ -1,0 +1,36 @@
+name: gemini_questions
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  stability_image_generation: ^0.0.4
+  http: ^1.4.0
+  percent_indicator: ^4.2.5
+  flutter_slidable: ^4.0.0
+  flutter_stateman: ^0.0.9
+  flutter_staggered_grid_view: ^0.7.0
+  iconsax: ^0.0.8
+  flutter_rating_bar: ^4.0.1
+  readmore: ^3.0.0
+  hive_flutter: ^1.1.0
+  hive: ^2.2.3
+  carousel_slider: ^5.0.0
+  smooth_page_indicator: ^1.2.1
+  intl: ^0.20.2
+  google_generative_ai: ^0.4.7
+  flutter_gemini: ^3.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
